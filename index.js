@@ -61,12 +61,7 @@ app.get('/news/all', (req, res) => {
 				writer: $(elem).find("a.press").text().split(" ")[0],
 				date: dateStr
 			}
-			//console.log()
-			//console.log(ulList)
-
 		})
-		//return ulList.filter(n)
-		//console.log(ulList);
 		res.status(200).json({
 			news: ulList
 		})
@@ -99,8 +94,6 @@ app.get('/jh/chart/music',(req,res) => {
 		$bodyList.each((i, elem) => {
 			if($(elem).find("div.rank01 > span > a").text() != "") {
 				var author = $(elem).find("div.rank02 > a:first-child").text();
-				console.log(author);
-				//if(author.split(',').length > 2) author = author.split(',')[0]
 				ulList.push({
 					title: $(elem).find("div.rank01 > span > a").text(),
 					author: author,
